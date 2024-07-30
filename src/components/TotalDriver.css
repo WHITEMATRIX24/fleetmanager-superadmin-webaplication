@@ -1,0 +1,75 @@
+/* src/components/TotalDriver.css */
+.total-drivers {
+    padding: 20px;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.drivers-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    /* Adjust the max-width to fit four cards */
+    justify-content: center;
+    /* Center the grid within its container */
+}
+
+.driver-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.1));
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+.driver-photo {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.driver-icon {
+    font-size: 100px;
+    color: white;
+}
+
+.more-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 40px;
+    background-color: transparent;
+    color: #fff;
+    border: 0.5px solid white;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .drivers-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .drivers-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .drivers-list {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        /* Reduce gap for smaller screens */
+    }
+
+    .driver-card {
+        width: 100%;
+    }
+}

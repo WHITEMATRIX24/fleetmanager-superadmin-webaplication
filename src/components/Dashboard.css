@@ -1,0 +1,359 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('../assets/bg.PNG') no-repeat center center fixed;
+    background-size: cover;
+
+}
+
+.dashboard {
+
+    display: flex;
+    border-radius: 10px;
+    flex-direction: column;
+    height: 90vh;
+    color: #fff;
+}
+
+.dashboard-header {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin-left: 20px;
+}
+
+.logo {
+    height: 80px;
+    margin-left: 0;
+    margin-right: 20px;
+    /* Reduce margin to ensure max 20px space */
+}
+
+.dashboard-header h2 {
+    margin: 0;
+    margin-left: 10px;
+    /* Reduce to ensure max 20px space */
+}
+
+
+
+
+.profile-icon {
+    font-size: 2em;
+}
+
+.dashboard-content {
+
+    display: flex;
+    flex: 1;
+}
+
+.sidebar {
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    position: fixed;
+
+    height: 100%;
+    margin-top: 90;
+    /* Ensure sidebar starts from the top */
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sidebar-icon {
+    font-size: 1.5em;
+}
+
+
+.main-content {
+
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 0;
+    margin-right: 20px;
+    margin-left: 110px;
+    /* This accounts for the width of the sidebar to prevent overlap */
+}
+
+.left-panel {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.right-panel {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-bottom: 0;
+}
+
+.chart-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.performance-metrics {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0 10px 10px 0;
+    flex: 1;
+}
+
+.performance-metrics-t {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0 10px 10px 0;
+}
+
+.legend,
+.legend-t {
+    margin-bottom: 10px;
+}
+
+.chart-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboard-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0 10px 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    cursor: pointer;
+    border: 0.5px solid whitesmoke;
+    transition: all 0.3s ease;
+    width: calc(25% - 20px);
+    box-sizing: border-box;
+}
+
+.dashboard-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.card-icon {
+    font-size: 2em;
+    margin-right: 10px;
+}
+
+.card-title {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+.card-number {
+    font-size: 1.5em;
+}
+
+.view-button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.view-button:hover {
+    color: #ddd;
+}
+
+.arrow {
+    margin-left: 5px;
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
+    border: 1px solid #444;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    width: 400px;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #ddd;
+    background: transparent;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.popup-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-form label {
+    margin: 10px 0 5px;
+    color: white;
+}
+
+.popup-form input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.popup-form button {
+    padding: 10px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.popup-form button:hover {
+    background: #333;
+}
+
+@media (max-width: 768px) {
+    .dashboard-content {
+        margin-left: 0;
+    }
+
+    .show-sidebar .dashboard-content {
+        margin-left: 200px;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .show-sidebar .sidebar {
+        display: block;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .dashboard-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-panel {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .right-panel {
+        width: 100%;
+    }
+
+    .chart-row {
+        width: 90%;
+        flex-direction: column;
+    }
+
+    .performance-metrics,
+    .dashboard-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 10px;
+        flex-direction: row;
+        /* Adjust for smaller screens */
+    }
+
+
+    .logo {
+        height: 50px;
+        margin-right: 10px;
+    }
+
+    .dashboard-header h2 {
+        margin: 0;
+        margin-left: 0px;
+        /* Reduce to ensure max 20px space */
+    }
+
+    .profile-icon {
+        font-size: 1.5em;
+    }
+
+    .sidebar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 10px;
+    }
+
+    .sidebar-item {
+        flex-direction: row;
+        justify-content: flex-start;
+        margin: 5px 0;
+    }
+
+    .sidebar-icon {
+        margin-right: 10px;
+    }
+
+    .main-content {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .performance-metrics,
+    .dashboard-card {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+}
